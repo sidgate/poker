@@ -5,9 +5,14 @@ import com.sidgate.deck.Hand;
 
 import java.util.LinkedList;
 
-public class Straight implements HandType {
+public class Straight extends HandType {
+
+	public Straight(HandType next) {
+		super(next);
+	}
+
 	@Override
-	public boolean validate(Hand hand) {
+	protected boolean process(Hand hand) {
 		LinkedList<Card> sorted = hand.sortedWithAceAdjusted();
 		Card previous = null;
 		for (Card card : sorted) {

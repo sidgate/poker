@@ -2,9 +2,13 @@ package com.sidgate.poker;
 
 import com.sidgate.deck.Hand;
 
-public class HighCard implements HandType {
+public class HighCard extends HandType {
+
+	public HighCard() {
+		super(null);
+	}
 	@Override
-	public boolean validate(Hand hand) {
+	protected boolean process(Hand hand) {
 		return true;
 	}
 

@@ -2,9 +2,13 @@ package com.sidgate.poker;
 
 import com.sidgate.deck.Hand;
 
-public class FullHouse implements HandType {
+public class FullHouse extends HandType {
+
+	public FullHouse(HandType next) {
+		super(next);
+	}
 	@Override
-	public boolean validate(Hand hand) {
+	protected boolean process(Hand hand) {
 		return hand.cardsGroupedByRank().stream().anyMatch(list -> list.size() == 3)
 			&& hand.cardsGroupedByRank().stream().anyMatch(list -> list.size() == 2);
 	}
