@@ -1,9 +1,10 @@
 package sidgate.deck
 
 
-data class Card(private val name: String) {
-    val suit: Suit = Suit.getByShortName(name.substring(0, 1))
-    val rank: Rank = Rank.getByShortName(name.substring(1, 2))
+data class Card(val suit: Suit, val rank: Rank) {
+    companion object {
+        fun of(name: String) = Card(Suit.getByShortName(name.substring(0, 1)), Rank.getByShortName(name.substring(1, 2)))
+    }
 
     val isAce = rank == Rank.ACE
 

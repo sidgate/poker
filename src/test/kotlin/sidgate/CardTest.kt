@@ -9,7 +9,7 @@ import sidgate.deck.Suit
 class CardTest {
     @Test
     fun testCreateCard() {
-        val card = Card("H5")
+        val card = Card.of("H5")
         assertEquals(Suit.HEART, card.suit)
         assertEquals(Rank.FIVE, card.rank)
     }

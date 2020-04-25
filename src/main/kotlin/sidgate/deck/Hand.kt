@@ -1,6 +1,6 @@
 package sidgate.deck
 
-class Hand(private val cards: List<Card>) {
+data class Hand(private val cards: List<Card>) {
 
     fun cardsGroupedByRank() = cards.groupBy { it.rank }.values
 

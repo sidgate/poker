@@ -9,7 +9,7 @@ import sidgate.poker.Poker
 
 class PokerTest {
 
-    private fun cards(list: String) = list.split(",").map { Card(it) }
+    private fun cards(list: String) = list.split(",").map { Card.of(it) }
     @TestFactory
     fun testPokerHands() = listOf(
             "H2,C2,D2,S2,D8" to "four-of-a-kind",
