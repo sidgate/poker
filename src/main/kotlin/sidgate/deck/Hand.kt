@@ -2,9 +2,9 @@ package sidgate.deck
 
 class Hand(private val cards: List<Card>) {
 
-    fun cardsGroupedByRank(): Collection<List<Card>> = cards.groupBy { it.rank }.values
+    fun cardsGroupedByRank() = cards.groupBy { it.rank }.values
 
-    fun cardsGroupedBySuit(): Collection<List<Card>> = cards.groupBy { it.suit }.values
+    fun cardsGroupedBySuit() = cards.groupBy { it.suit }.values
 
     fun sortedWithAceAdjusted(): List<Card> {
         val sorted = cards.sortedBy { it.rank }
